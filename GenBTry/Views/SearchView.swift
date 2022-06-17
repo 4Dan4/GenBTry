@@ -25,13 +25,13 @@ class SearchView: UIViewController {
         
     }()
     
-    private lazy var favoriteVutton: UIButton = {
+    private lazy var favoriteButton: UIButton = {
         
         let button = UIButton(type: .system)
         let image = UIImage(named: "Favorite.png")
         
         button.setBackgroundImage(image, for: UIControl.State.normal)
-        button.addTarget(self, action: #selector(searchButtAct), for: .touchUpInside)
+        button.addTarget(self, action: #selector(favoriteButtAct), for: .touchUpInside)
         
         return button
         
@@ -43,7 +43,7 @@ class SearchView: UIViewController {
         let image = UIImage(named: "Music.png")
         
         button.setBackgroundImage(image, for: UIControl.State.normal)
-        button.addTarget(self, action: #selector(searchButtAct), for: .touchUpInside)
+        button.addTarget(self, action: #selector(musicButtAct), for: .touchUpInside)
         
         return button
         
@@ -55,7 +55,7 @@ class SearchView: UIViewController {
         let image = UIImage(named: "Shop.png")
         
         button.setBackgroundImage(image, for: UIControl.State.normal)
-        button.addTarget(self, action: #selector(searchButtAct), for: .touchUpInside)
+        button.addTarget(self, action: #selector(shopButtAct), for: .touchUpInside)
         
         return button
         
@@ -67,17 +67,9 @@ class SearchView: UIViewController {
         let image = UIImage(named: "Profile.png")
         
         button.setBackgroundImage(image, for: UIControl.State.normal)
-        button.addTarget(self, action: #selector(searchButtAct), for: .touchUpInside)
+        button.addTarget(self, action: #selector(profileButtAct), for: .touchUpInside)
         
         return button
-        
-    }()
-    
-    private lazy var navBar: UIImageView = {
-        
-        let image = UIImageView(image: UIImage(named: "Search.png"))
-        
-        return image
         
     }()
     
@@ -89,7 +81,7 @@ class SearchView: UIViewController {
         
         addConstraints()
     }
-    
+
 //    MARK: - Add constraints
     
     private func addConstraints() {
@@ -100,15 +92,15 @@ class SearchView: UIViewController {
             make.bottom.equalToSuperview().inset(25)
         }
         
-        view.addSubview(favoriteVutton)
-        favoriteVutton.snp.makeConstraints { make in
+        view.addSubview(favoriteButton)
+        favoriteButton.snp.makeConstraints { make in
             make.left.equalTo(searchButton).inset(80)
             make.bottom.equalToSuperview().inset(25)
         }
         
         view.addSubview(musicButton)
         musicButton.snp.makeConstraints { make in
-            make.left.equalTo(favoriteVutton).inset(80)
+            make.left.equalTo(favoriteButton).inset(80)
             make.bottom.equalToSuperview().inset(25)
         }
         
@@ -122,12 +114,6 @@ class SearchView: UIViewController {
         profileButton.snp.makeConstraints { make in
             make.left.equalTo(shopButton).inset(80)
             make.bottom.equalToSuperview().inset(25)
-        }
-        
-        view.addSubview(navBar)
-        navBar.snp.makeConstraints { make in
-            make.centerX.equalTo(view.center.x)
-            make.centerY.equalTo(view.center.y)
         }
         
     }

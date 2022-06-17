@@ -10,7 +10,6 @@ import SnapKit
 
 class FavoriteView: UIViewController {
 
-    
 //    MARK: - Parametrs
     
     private lazy var searchButton: UIButton = {
@@ -25,13 +24,13 @@ class FavoriteView: UIViewController {
         
     }()
     
-    private lazy var favoriteVutton: UIButton = {
+    private lazy var favoriteButton: UIButton = {
         
         let button = UIButton(type: .system)
         let image = UIImage(named: "Favorite.png")
         
         button.setBackgroundImage(image, for: UIControl.State.normal)
-        button.addTarget(self, action: #selector(searchButtAct), for: .touchUpInside)
+        button.addTarget(self, action: #selector(favoriteButtAct), for: .touchUpInside)
         
         return button
         
@@ -43,7 +42,7 @@ class FavoriteView: UIViewController {
         let image = UIImage(named: "Music.png")
         
         button.setBackgroundImage(image, for: UIControl.State.normal)
-        button.addTarget(self, action: #selector(searchButtAct), for: .touchUpInside)
+        button.addTarget(self, action: #selector(musicButtAct), for: .touchUpInside)
         
         return button
         
@@ -55,7 +54,7 @@ class FavoriteView: UIViewController {
         let image = UIImage(named: "Shop.png")
         
         button.setBackgroundImage(image, for: UIControl.State.normal)
-        button.addTarget(self, action: #selector(searchButtAct), for: .touchUpInside)
+        button.addTarget(self, action: #selector(shopButtAct), for: .touchUpInside)
         
         return button
         
@@ -67,7 +66,7 @@ class FavoriteView: UIViewController {
         let image = UIImage(named: "Profile.png")
         
         button.setBackgroundImage(image, for: UIControl.State.normal)
-        button.addTarget(self, action: #selector(searchButtAct), for: .touchUpInside)
+        button.addTarget(self, action: #selector(profileButtAct), for: .touchUpInside)
         
         return button
         
@@ -77,7 +76,7 @@ class FavoriteView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        view.backgroundColor = .gray
         
         addConstraints()
     }
@@ -92,15 +91,15 @@ class FavoriteView: UIViewController {
             make.bottom.equalToSuperview().inset(25)
         }
         
-        view.addSubview(favoriteVutton)
-        favoriteVutton.snp.makeConstraints { make in
+        view.addSubview(favoriteButton)
+        favoriteButton.snp.makeConstraints { make in
             make.left.equalTo(searchButton).inset(80)
             make.bottom.equalToSuperview().inset(25)
         }
         
         view.addSubview(musicButton)
         musicButton.snp.makeConstraints { make in
-            make.left.equalTo(favoriteVutton).inset(80)
+            make.left.equalTo(favoriteButton).inset(80)
             make.bottom.equalToSuperview().inset(25)
         }
         
