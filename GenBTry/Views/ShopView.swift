@@ -142,41 +142,4 @@ class ShopView: UIViewController {
         
     }
     
-//    MARK: - Button actions
-    
-    @objc private func searchButtAct() {
-        let searchVC = SearchView()
-        searchVC.modalPresentationStyle = .fullScreen
-        
-        present(searchVC, animated: true)
-    }
-    
-    @objc private func favoriteButtAct() {
-        let favoriteVC = FavoriteView()
-        favoriteVC.modalPresentationStyle = .fullScreen
-        
-        present(favoriteVC, animated: true)
-    }
-    
-    @objc private func musicButtAct() {
-        let musicVC = MusicView()
-        musicVC.modalPresentationStyle = .fullScreen
-        
-        present(musicVC, animated: true)
-    }
-    
-    @objc private func shopButtAct() {
-        let shopVC = ShopView()
-        shopVC.modalPresentationStyle = .fullScreen
-        
-        present(shopVC, animated: true)
-    }
-    
-    @objc private func profileButtAct() {
-        let profileVC = ProfileView()
-        profileVC.modalPresentationStyle = .fullScreen
-        
-        present(profileVC, animated: true)
-    }
-    
 }

@@ -11,6 +11,9 @@ import SnapKit
 class SearchView: UIViewController {
 
 //    MARK: - Parametrs
+
+    let scrollView = UIScrollView()
+    let contentView = UIView()
     
     private lazy var searchButton: UIButton = {
             
@@ -72,10 +75,43 @@ class SearchView: UIViewController {
             
     }()
     
-    private lazy var label: UILabel = {
+    private lazy var headphonesImage: UIImageView = {
+        let image = UIImageView(image: UIImage(named: "Headphones.png"))
+        
+        return image
+    }()
+    
+    var searchField: UITextField = {
+            let field = UITextField()
+            field.placeholder = "Search"
+            field.borderStyle = .roundedRect
+            field.clearButtonMode = UITextField.ViewMode.whileEditing
+            field.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.08)
+            return field
+        }()
+    
+    var newReleases: UILabel = {
         let label = UILabel()
-        label.text = "Search"
-        label.font = .systemFont(ofSize: 25)
+        label.text = "New Releases"
+        label.font = .boldSystemFont(ofSize: 24)
+        label.textColor = .white
+        
+        return label
+    }()
+    
+    var showReleasesButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .white
+        button.setTitle("Show All", for: .normal)
+        button.setImage(UIImage(named: "Image"), for: .normal)
+        
+        return button
+    }()
+    
+    var bestOfArtists: UILabel = {
+        let label = UILabel()
+        label.text = "Best of artists"
+        label.font = . boldSystemFont(ofSize: 24)
         label.textColor = .white
         
         return label
@@ -84,10 +120,13 @@ class SearchView: UIViewController {
 //    MARK: - Lifecycle
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         let gradient: CAGradientLayer = CAGradientLayer()
 
+        searchField.delegate = self
+        
         gradient.colors = [UIColor(red: 0.114, green: 0, blue: 0.204, alpha: 1).cgColor,
                            UIColor(red: 0.035, green: 0, blue: 0.133, alpha: 1).cgColor]
         gradient.locations = [0.0 , 1.0]
@@ -96,13 +135,23 @@ class SearchView: UIViewController {
         gradient.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height)
 
         self.view.layer.insertSublayer(gradient, at: 0)
-        
-        addConstraints()
-    }
 
+        addConstraints()
+
+        setupScrollView()
+        setupViews()
+        
+    }
+    
 //    MARK: - Add constraints
     
     private func addConstraints() {
+        
+        view.addSubview(headphonesImage)
+        headphonesImage.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaInsets).inset(50)
+            make.left.equalToSuperview().inset(20)
+        }
         
         view.addSubview(musicButton)
         musicButton.snp.makeConstraints { make in
@@ -134,49 +183,6 @@ class SearchView: UIViewController {
             make.bottom.equalToSuperview().inset((view.frame.height)/30)
         }
         
-        view.addSubview(label)
-        label.snp.makeConstraints { make in
-            make.centerX.equalTo(view.center.x)
-            make.centerY.equalTo(view.center.y)
-        }
-        
-    }
-    
-//    MARK: - Button actions
-    
-    @objc private func searchButtAct() {
-        let searchVC = SearchView()
-        searchVC.modalPresentationStyle = .fullScreen
-        
-        present(searchVC, animated: true)
-    }
-    
-    @objc private func favoriteButtAct() {
-        let favoriteVC = FavoriteView()
-        favoriteVC.modalPresentationStyle = .fullScreen
-        
-        present(favoriteVC, animated: true)
-    }
-    
-    @objc private func musicButtAct() {
-        let musicVC = MusicView()
-        musicVC.modalPresentationStyle = .fullScreen
-        
-        present(musicVC, animated: true)
-    }
-    
-    @objc private func shopButtAct() {
-        let shopVC = ShopView()
-        shopVC.modalPresentationStyle = .fullScreen
-        
-        present(shopVC, animated: true)
-    }
-    
-    @objc private func profileButtAct() {
-        let profileVC = ProfileView()
-        profileVC.modalPresentationStyle = .fullScreen
-
-        present(profileVC, animated: true)
     }
     
 }

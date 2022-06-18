@@ -13,10 +13,14 @@
 		3806E377285BACCE00AF5BE4 /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806E376285BACCE00AF5BE4 /* MusicView.swift */; };
 		3806E379285BACDA00AF5BE4 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806E378285BACDA00AF5BE4 /* ShopView.swift */; };
 		3806E37B285BACE600AF5BE4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806E37A285BACE600AF5BE4 /* ProfileView.swift */; };
+		38557FD8285CFCB200C7930D /* TableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38557FD7285CFCB200C7930D /* TableViewExt.swift */; };
+		38557FDA285D83F200C7930D /* ScrollViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38557FD9285D83F200C7930D /* ScrollViewExt.swift */; };
 		38BD490D285BA653008B9A63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD490C285BA653008B9A63 /* AppDelegate.swift */; };
 		38BD490F285BA653008B9A63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BD490E285BA653008B9A63 /* SceneDelegate.swift */; };
 		38BD4916285BA655008B9A63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38BD4915285BA655008B9A63 /* Assets.xcassets */; };
 		38BD4919285BA655008B9A63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38BD4917285BA655008B9A63 /* LaunchScreen.storyboard */; };
+		38C13DCF285D97EC00E5F5ED /* StepButtonsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C13DCE285D97EC00E5F5ED /* StepButtonsExt.swift */; };
+		38C13DD1285DA55600E5F5ED /* TextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C13DD0285DA55600E5F5ED /* TextFieldExt.swift */; };
 		70C116FB701F2D8E2F7B34FA /* Pods_GenBTry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A011CDE2CB8B81C5EFF548E /* Pods_GenBTry.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,12 +33,16 @@
 		3806E376285BACCE00AF5BE4 /* MusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
 		3806E378285BACDA00AF5BE4 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		3806E37A285BACE600AF5BE4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		38557FD7285CFCB200C7930D /* TableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExt.swift; sourceTree = "<group>"; };
+		38557FD9285D83F200C7930D /* ScrollViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewExt.swift; sourceTree = "<group>"; };
 		38BD4909285BA653008B9A63 /* GenBTry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GenBTry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38BD490C285BA653008B9A63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38BD490E285BA653008B9A63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		38BD4915285BA655008B9A63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38BD4918285BA655008B9A63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38BD491A285BA655008B9A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38C13DCE285D97EC00E5F5ED /* StepButtonsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepButtonsExt.swift; sourceTree = "<group>"; };
+		38C13DD0285DA55600E5F5ED /* TextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExt.swift; sourceTree = "<group>"; };
 		3CAF9C74EF9FBB37C4923240 /* Pods-GenBTry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenBTry.debug.xcconfig"; path = "Target Support Files/Pods-GenBTry/Pods-GenBTry.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,11 +119,23 @@
 			children = (
 				38BD491A285BA655008B9A63 /* Info.plist */,
 				3806E36F285BA84900AF5BE4 /* Resources */,
+				38FAC3A5285CFC6700E00EFC /* Extensions */,
 				3806E36E285BA7F100AF5BE4 /* Delegates */,
 				3806E36D285BA7EC00AF5BE4 /* Views */,
 				3806E36C285BA7D900AF5BE4 /* Models */,
 			);
 			path = GenBTry;
+			sourceTree = "<group>";
+		};
+		38FAC3A5285CFC6700E00EFC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				38557FD7285CFCB200C7930D /* TableViewExt.swift */,
+				38C13DCE285D97EC00E5F5ED /* StepButtonsExt.swift */,
+				38557FD9285D83F200C7930D /* ScrollViewExt.swift */,
+				38C13DD0285DA55600E5F5ED /* TextFieldExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4817C032D3C7284D976012FB /* Frameworks */ = {
@@ -251,12 +271,16 @@
 			files = (
 				3806E373285BACB500AF5BE4 /* SearchView.swift in Sources */,
 				3806E37B285BACE600AF5BE4 /* ProfileView.swift in Sources */,
+				38C13DCF285D97EC00E5F5ED /* StepButtonsExt.swift in Sources */,
+				38557FD8285CFCB200C7930D /* TableViewExt.swift in Sources */,
 				3806E371285BA85E00AF5BE4 /* MainModel.swift in Sources */,
 				38BD490D285BA653008B9A63 /* AppDelegate.swift in Sources */,
 				3806E377285BACCE00AF5BE4 /* MusicView.swift in Sources */,
 				3806E375285BACC000AF5BE4 /* FavoriteView.swift in Sources */,
+				38557FDA285D83F200C7930D /* ScrollViewExt.swift in Sources */,
 				3806E379285BACDA00AF5BE4 /* ShopView.swift in Sources */,
 				38BD490F285BA653008B9A63 /* SceneDelegate.swift in Sources */,
+				38C13DD1285DA55600E5F5ED /* TextFieldExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
